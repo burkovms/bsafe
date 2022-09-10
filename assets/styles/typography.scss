@@ -1,0 +1,129 @@
+/*-------------------- FONTS --------------------*/
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@500;600&display=swap");
+
+/* -------------------- DEFAULT STYLES -------------------- */
+body {
+	line-height: 1.5;
+	min-width: 320px;
+	position: relative;
+	overflow-x: hidden;
+	font-family: $font_family;
+	color: map-get($colors, "white");
+	font-size: $font_size;
+	background-color: map-get($bg, "dark");
+	padding-top: 80px;
+	&.no-scroll {
+		overflow: hidden;
+	}
+}
+
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-family: $font_family_accent;
+}
+
+.h1,
+h1 {
+	font-weight: 600;
+	font-size: 96px;
+	letter-spacing: -1px;
+	line-height: 1.25;
+	@media (max-width: $media_xxl) {
+		font-size: 76px;
+	}
+	@media (max-width: $media_xl) {
+		font-size: 70px;
+	}
+	@media (max-width: $media_lg) {
+		font-size: 58px;
+	}
+	@media (max-width: $media_sm) {
+		font-size: 48px;
+	}
+	@media (max-width: $media_xs) {
+		font-size: 32px;
+	}
+	@media (max-width: 360px) {
+		font-size: 30px;
+	}
+}
+
+.slogan {
+	font-weight: 600;
+	color: map-get($colors, "accent");
+	line-height: 1.2;
+	margin-bottom: 8px;
+}
+
+.h2,
+h2 {
+	font-weight: 600;
+	font-size: 72px;
+	letter-spacing: -1px;
+	line-height: 1.2223;
+	-webkit-text-stroke: 1px map-get($colors, "white");
+	text-stroke: 1px map-get($colors, "white");
+	color: transparent;
+	@media (max-width: $media_lg) {
+		font-size: 62px;
+	}
+	@media (max-width: $media_sm) {
+		font-size: 48px;
+	}
+	@media (max-width: $media_xs) {
+		font-size: 46px;
+	}
+	@media (max-width: 360px) {
+		font-size: 44px;
+	}
+}
+
+.h3,
+h3 {
+	font-size: 32px;
+	letter-spacing: -0.5px;
+	font-weight: 500;
+	@media (max-width: $media_lg) {
+		font-size: 24px;
+	}
+	@media (max-width: $media_xs) {
+		font-size: 22px;
+	}
+}
+
+.h4,
+h4 {
+	font-size: 24px;
+	font-weight: 500;
+	line-height: 1.335;
+	@media (max-width: $media_lg) {
+		font-size: 20px;
+	}
+	@media (max-width: $media_xs) {
+		font-size: 18px;
+	}
+}
+
+.h5,
+h5 {
+	font-size: 18px;
+	font-weight: 500;
+	line-height: 1.1;
+}
+
+.h6,
+h6 {
+	font-size: 16px;
+	line-height: 1.2;
+	font-weight: 600;
+}

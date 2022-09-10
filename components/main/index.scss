@@ -1,0 +1,58 @@
+@import "~/assets/styles/variables.scss";
+
+.main {
+  margin-top: -80px;
+  height: 100vh;
+  min-height: 640px;
+  background-position: top left;
+  background-repeat: no-repeat;
+  background-size: contain;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  position: relative;
+  @media (max-width: $media_md) {
+    background-size: auto 80%;
+  }
+
+  &__slogan {
+    font-size: $font-size + 2px;
+    margin-top: 22px;
+    @media (max-width: $media_lg) {
+      max-width: 740px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    @media (max-width: $media_sm) {
+      font-size: $font-size;
+      max-width: 480px;
+    }
+  }
+
+  .btn {
+    margin-top: 72px;
+    @media (max-width: $media_lg) {
+      margin-top: 62px;
+    }
+  }
+
+  .container-fluid {
+    @media (max-width: $media_lg) {
+      max-width: 960px;
+      padding-left: 15px;
+      padding-right: 15px;
+    }
+  }
+
+  .technology {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding-bottom: 65px;
+    @media (max-width: $media_lg) {
+      padding-bottom: 24px;
+    }
+  }
+}

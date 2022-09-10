@@ -1,0 +1,62 @@
+.tag-list {
+  margin-left: -4px;
+  margin-right: -4px;
+  display: flex;
+  flex-wrap: wrap;
+  li {
+    padding: 8px 4px;
+    @media (max-width: $media_xs) {
+      flex: 0 0 50%;
+    }
+    span {
+      display: block;
+      font-weight: 500;
+      font-size: 12px;
+      line-height: 16px;
+      border-radius: 12px;
+      padding: 8px 16px;
+      user-select: none;
+      border: 1px solid map-get($colors, "accent");
+      line-height: 1;
+      min-height: 32px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      transition: 0.15s linear;
+      @media (max-width: $media_xs) {
+        min-height: 40px;
+        text-align: center;
+        padding: 6px 12px;
+      }
+    }
+    .checkbox-group {
+      position: relative;
+      input {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+        margin: 0;
+        padding: 0;
+        border: none;
+        opacity: 0;
+        &:checked ~ {
+          span {
+            color: map-get($colors, "white");
+            background-color: map-get($colors, "accent");
+          }
+        }
+        &:not(:checked) {
+          &:hover {
+            ~ span {
+              color: map-get($colors, "accent");
+            }
+          }
+        }
+      }
+    }
+  }
+}

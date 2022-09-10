@@ -1,0 +1,97 @@
+@import "~/assets/styles/variables.scss";
+
+.lets-talk {
+  &__row {
+    align-items: center;
+  }
+
+  p {
+    font-size: $font-size + 2px;
+    margin-top: 6px;
+    @media (max-width: $media_xl) {
+      font-size: $font-size;
+    }
+  }
+
+  &__link {
+    font-weight: 600;
+    font-size: 122px;
+    line-height: 1;
+    letter-spacing: -1px;
+    font-family: $font_family_accent;
+    position: relative;
+    display: inline-flex;
+    white-space: nowrap;
+    user-select: none;
+    @media (max-width: $media_lg) {
+      font-size: 100px;
+    }
+    @media (max-width: $media_md) {
+      margin-top: 32px;
+    }
+    @media (max-width: $media_sm) {
+      font-size: 84px;
+    }
+    @media (max-width: $media_xs) {
+      font-size: 54px;
+    }
+    @media (min-width: 1025px) {
+      &:hover {
+        transform: translateX(5px);
+        .text {
+          opacity: 0;
+        }
+        &:after {
+          opacity: 0.4;
+          filter: blur(40px);
+        }
+        &:before {
+          opacity: 1;
+        }
+      }
+    }
+    @media (max-width: 1024px) {
+      &:active {
+        transform: translateX(5px);
+        .text {
+          opacity: 0;
+        }
+        &:after {
+          opacity: 0.4;
+          filter: blur(40px);
+        }
+        &:before {
+          opacity: 1;
+        }
+      }
+    }
+
+    .text {
+      -webkit-text-stroke: 1px map-get($colors, "white");
+      text-stroke: 1px map-get($colors, "white");
+      color: transparent;
+      display: block;
+      transition: 0.35s ease;
+    }
+
+    &:after,
+    &:before {
+      content: attr(data-atr);
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background: linear-gradient(96.05deg, #ff5386 0%, #df48e7 50%, #7b61ff 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      text-fill-color: transparent;
+      opacity: 0;
+      transition: 0.35s ease;
+      pointer-events: none;
+    }
+    &:before {
+      z-index: 1;
+    }
+  }
+}

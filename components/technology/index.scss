@@ -1,0 +1,15 @@
+@import "~/assets/styles/variables.scss";
+
+.technology {
+  &__slide {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    img {
+      max-height: 50px;
+      @media (max-width: $media_lg) {
+        max-height: 40px;
+      }
+    }
+  }
+}

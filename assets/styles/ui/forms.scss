@@ -1,0 +1,179 @@
+button,
+input[type="button"],
+input[type="submit"] {
+  -webkit-appearance: button;
+  cursor: pointer;
+  font-family: $font_family;
+  border: none;
+}
+button[disabled],
+html input[disabled] {
+  cursor: default;
+}
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+  padding: 0;
+  border: 0;
+}
+input[type="text"],
+input[type="tel"],
+input[type="email"],
+input[type="password"],
+input[type="search"],
+textarea {
+  display: block;
+  width: 100%;
+  height: 56px;
+  padding: 0 24px;
+  font-family: $font_family;
+  font-size: $font-size - 3px;
+  background: radial-gradient(143.81% 101.28% at -1.48% 0%, #30333e 0%, #2b2e37 100%);
+  border-radius: $border_radius - 8px;
+  border: none;
+  box-shadow: none;
+  transition: $transition;
+  text-align: left;
+  color: map-get($colors, "white");
+  @media (max-width: $media_xs) {
+    padding: 0 16px;
+  }
+  &:hover,
+  &:focus {
+    box-shadow: 0 0 0 2px map-get($colors, "accent");
+  }
+  &.error {
+    box-shadow: 0 0 0 2px map-get($colors, "error");
+  }
+}
+input,
+textarea::placeholder {
+  color: map-get($colors, "gray");
+}
+
+textarea {
+  resize: none;
+  height: 136px;
+  padding-top: 16px;
+  padding-bottom: 16px;
+}
+
+.form {
+  ul {
+    li {
+      position: relative;
+      + li {
+        margin-top: 24px;
+      }
+      .label {
+        text-align: left;
+        + {
+          textarea,
+          input {
+            margin-top: 16px;
+          }
+        }
+      }
+      .input-help {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        font-size: 11px;
+        color: map-get($colors, "error");
+        margin-top: 2px;
+      }
+    }
+  }
+  .btn-cover {
+    margin-top: 32px;
+  }
+}
+
+// input file
+.input-file {
+  background: #242731;
+  border: 2px dashed rgba(240, 243, 246, 0.1);
+  border-radius: $border_radius - 8px;
+  padding: 24px;
+  text-align: center;
+  .btn {
+    margin-top: 20px;
+  }
+  input {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    border: none;
+    opacity: 0;
+    z-index: 2;
+  }
+  ul li + li {
+    margin-top: 0;
+  }
+}
+
+// input range
+input[type="range"] {
+  position: relative;
+  -webkit-appearance: none;
+  display: block;
+  width: 100%;
+  height: 8px;
+  margin: 0;
+  background: rgba(map-get($colors, "accent"), 0.4);
+  box-shadow: 0 0 0 4px rgba(map-get($colors, "accent"), 0.4);
+  background-image: linear-gradient(to right, map-get($colors, "accent") 0%, map-get($colors, "accent") 100%);
+  background-repeat: no-repeat;
+  border-radius: 20px;
+  &::-webkit-slider-runnable-track {
+    width: 100%;
+    cursor: pointer;
+    box-shadow: none;
+    background: transparent;
+    border-radius: 10px;
+    border: none;
+  }
+  &::-moz-range-track {
+    width: 100%;
+    cursor: pointer;
+    box-shadow: none;
+    background: transparent;
+    border-radius: 10px;
+    border: none;
+  }
+
+  &::-webkit-slider-thumb {
+    box-shadow: none;
+    border: none;
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    background-color: map-get($colors, "white");
+    background-image: url("../img/arrow-range.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    cursor: pointer;
+    -webkit-appearance: none;
+  }
+  &::-moz-range-thumb {
+    box-shadow: none;
+    border: none;
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    background-color: map-get($colors, "white");
+    background-image: url("../img/arrow-range.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    cursor: pointer;
+  }
+  &:focus::-webkit-slider-runnable-track {
+    background: transparent;
+  }
+}

@@ -1,0 +1,224 @@
+@import "./normalize";
+@import "./grid";
+@import "./variables";
+@import "./mixins";
+@import "./typography";
+@import "./ui/ui";
+
+// SCROLL
+* {
+  &::selection {
+    background: transparent;
+    color: map-get($colors, "accent");
+  }
+  @media (min-width: 1024px) {
+    scrollbar-color: map-get($colors, "accent") map-get($colors, "accent");
+    scrollbar-width: thin;
+    &::-webkit-scrollbar {
+      width: 6px;
+      background-color: map-get($bg, "dark");
+      border-radius: 4px;
+    }
+    &::-webkit-scrollbar-thumb {
+      background-color: map-get($colors, "accent");
+      border-radius: 4px;
+      box-shadow: none;
+      opacity: 1;
+      &:hover {
+        background-color: map-get($colors, "purple");
+        opacity: 1;
+      }
+      &:active {
+        opacity: 1;
+        background-color: map-get($colors, "purple");
+      }
+      &:focus {
+        opacity: 1;
+        background-color: map-get($colors, "purple");
+      }
+    }
+  }
+}
+
+section {
+  padding-left: 40px;
+  padding-right: 40px;
+  @media (max-width: $media_xl) {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+  @media (max-width: $media_lg) {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+}
+
+a {
+  color: map-get($colors, "white");
+  &:hover {
+    color: map-get($colors, "purple");
+  }
+}
+
+.pt140 {
+  padding-top: 140px;
+  @media (max-width: $media_sm) {
+    padding-top: 120px;
+  }
+}
+
+.pb140 {
+  padding-bottom: 140px;
+  @media (max-width: $media_sm) {
+    padding-bottom: 120px;
+  }
+}
+
+.link {
+  @include link;
+}
+
+.secondary {
+  color: map-get($colors, "gray");
+}
+
+.label {
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 1.335;
+  color: map-get($colors, "gray");
+  margin-bottom: 8px;
+}
+
+.social-fixed,
+.get-in-touch {
+  writing-mode: vertical-lr;
+  z-index: 2;
+  position: fixed;
+  bottom: 75px;
+  text-transform: uppercase;
+  transform: rotate(-180deg);
+  font-size: $font-size - 3px;
+  line-height: 24px;
+  @media (max-width: $media_lg) {
+    bottom: 32px;
+  }
+  @media (max-width: $media_md) {
+    font-size: $font-size - 4px;
+    line-height: 20px;
+  }
+}
+
+.get-in-touch {
+  left: 36px;
+  @media (max-width: $media_xxl) {
+    left: 20px;
+  }
+  @media (max-width: $media_xl) {
+    left: 10px;
+  }
+  @media (max-width: $media_lg) {
+    left: 5px;
+  }
+  a {
+    display: flex;
+    align-items: center;
+    background-image: linear-gradient(180deg, #6c5dd3 50%, #fff 50%);
+    background-size: 100% 200%;
+    background-position: 0 bottom;
+    span {
+      margin: 20px 0;
+    }
+  }
+}
+
+.social-fixed {
+  right: 36px;
+  @media (max-width: $media_xxl) {
+    right: 20px;
+  }
+  @media (max-width: $media_xl) {
+    right: 10px;
+  }
+  @media (max-width: $media_lg) {
+    right: 5px;
+  }
+  display: flex;
+  align-items: center;
+  &__text {
+    flex: 0 0 auto;
+    span {
+      margin: 20px 0;
+    }
+  }
+
+  &__list {
+    flex: 0 0 auto;
+    display: flex;
+    align-items: center;
+    li {
+      transform: rotate(90deg);
+
+      + li {
+        margin-top: 20px;
+      }
+      a {
+        display: block;
+        svg {
+          display: block;
+          fill: map-get($colors, "white");
+          transition: $transition;
+        }
+        &:hover {
+          svg {
+            fill: map-get($colors, "purple");
+          }
+        }
+      }
+    }
+  }
+}
+
+.text-border {
+  -webkit-text-stroke: 1px map-get($colors, "white");
+  text-stroke: 1px map-get($colors, "white");
+  color: transparent;
+}
+
+.title-gradient-border {
+  font-size: 56px;
+  background: linear-gradient(220.16deg, #5c8fff 0%, #c14bff 80.96%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-fill-color: transparent;
+  display: inline-block;
+  position: relative;
+  @media (max-width: $media_xxl) {
+    font-size: 50px;
+  }
+  @media (max-width: $media_xl) {
+    font-size: 44px;
+  }
+  @media (max-width: $media_sm) {
+    font-size: 34px;
+  }
+  &:before {
+    content: attr(data-title);
+    position: absolute;
+    top: 5px;
+    left: 3px;
+    width: 100%;
+    z-index: -1;
+    background: linear-gradient(220.16deg, #5c8fff 0%, #c14bff 80.96%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: map-get($bg, "dark");
+    text-fill-color: map-get($bg, "dark");
+    -webkit-text-stroke: 1px transparent;
+    color: map-get($bg, "dark");
+    @media (max-width: $media_xl) {
+      top: 3px;
+      left: 2px;
+    }
+  }
+}

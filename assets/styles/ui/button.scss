@@ -1,0 +1,86 @@
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  font-size: $font_size - 2px;
+  font-weight: 700;
+  color: map-get($colors, "white");
+  background-color: map-get($colors, "accent");
+  min-width: 166px;
+  height: 56px;
+  padding: 0 35px;
+  border-radius: $border_radius;
+  transition: letter-spacing $transition;
+  overflow: hidden;
+  user-select: none;
+  &:focus {
+    color: map-get($colors, "white");
+    letter-spacing: normal;
+  }
+  &:hover {
+    color: map-get($colors, "white");
+    @media (min-width: 1025px) {
+      letter-spacing: 1px;
+      &:before {
+        opacity: 1;
+      }
+    }
+  }
+  @media (max-width: 1024px) {
+    &:active {
+      color: map-get($colors, "white");
+      letter-spacing: 1px;
+      &:before {
+        opacity: 1;
+      }
+    }
+  }
+
+  span {
+    z-index: 1;
+    + svg {
+      margin-left: 16px;
+      @media (max-width: $media_xs) {
+        margin-left: 12px;
+      }
+    }
+  }
+
+  svg {
+    position: relative;
+    z-index: 1;
+    + span {
+      margin-left: 16px;
+      @media (max-width: $media_xs) {
+        margin-left: 12px;
+      }
+    }
+  }
+
+  &:before {
+    content: "";
+    position: absolute;
+    pointer-events: none;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(96.05deg, #ff5386 0%, #df48e7 50%, #7b61ff 100%);
+    opacity: 0;
+    transition: $transition;
+  }
+
+  &.btn-gray {
+    background: rgba(map-get($colors, "gray-100"), 0.1);
+  }
+
+  &.btn-round {
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+    min-width: auto;
+    background: linear-gradient(220.16deg, #5c8fff 0%, #c14bff 80.96%);
+    padding: 10px;
+  }
+}

@@ -1,0 +1,122 @@
+@import "~/assets/styles/variables.scss";
+
+.about {
+  &__wrap {
+    overflow: hidden;
+    height: 626px;
+    @media (max-width: $media_xxl) {
+      height: 476px;
+    }
+    @media (max-width: $media_lg) {
+      height: 376px;
+    }
+    @media (max-width: $media_md) {
+      height: auto;
+    }
+    &:before {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 380px;
+      z-index: 2;
+      background-color: rgba(map-get($bg, "dark"), 0.7);
+      pointer-events: none;
+      @media (max-width: $media_xxl) {
+        height: 230px;
+      }
+      @media (max-width: $media_lg) {
+        height: 200px;
+      }
+      @media (max-width: $media_md) {
+        height: 170px;
+      }
+      @media (max-width: $media_xs) {
+        height: 140px;
+      }
+    }
+  }
+  &__container {
+    overflow: hidden;
+    overflow-y: auto;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    scrollbar-color: transparent transparent;
+    scrollbar-width: thin;
+    @media (max-width: $media_md) {
+      position: relative;
+      padding-left: 0;
+      padding-right: 0;
+      margin-top: 64px;
+      height: 370px;
+    }
+    @media (max-width: $media_xs) {
+      margin-top: 48px;
+    }
+
+    &::-webkit-scrollbar {
+      width: 0px;
+      background-color: transparent;
+      border-radius: none;
+    }
+    &::-webkit-scrollbar-thumb {
+      background-color: transparent;
+      border-radius: none;
+      box-shadow: none;
+      opacity: 0;
+      &:hover {
+        background-color: transparent;
+        opacity: 0;
+      }
+      &:active {
+        opacity: 0;
+        background-color: transparent;
+      }
+      &:focus {
+        opacity: 0;
+        background-color: transparent;
+      }
+    }
+    .row {
+      justify-content: flex-end;
+    }
+  }
+  &__list-cover {
+    position: relative;
+  }
+
+  &__list {
+    padding-bottom: 450px;
+    @media (max-width: $media_xxl) {
+      padding-bottom: 300px;
+    }
+    @media (max-width: $media_lg) {
+      padding-bottom: 260px;
+    }
+    @media (max-width: $media_sm) {
+      padding-bottom: 200px;
+    }
+    @media (max-width: $media_xs) {
+      padding-bottom: 170px;
+    }
+    li {
+      + li {
+        margin-top: 80px;
+        @media (max-width: $media_lg) {
+          margin-top: 64px;
+        }
+        @media (max-width: $media_xs) {
+          margin-top: 48px;
+        }
+      }
+    }
+  }
+
+  &__list-description {
+    margin-top: 16px;
+  }
+}

@@ -1,0 +1,29 @@
+$colors: (
+  "white": #fff,
+  "accent": #6c5dd3,
+  "purple": #5f75ee,
+  "gray": #808191,
+  "gray-100": #e4e4e4,
+  "error": #ff0000,
+);
+
+$bg: (
+  "dark": #1f2128,
+  "dark-400": #0b0d17,
+  "gray": #242731,
+);
+
+$font_family_accent: "Poppins", sans-serif;
+$font_family: "Inter", sans-serif;
+
+$border_radius: 16px;
+$transition: 0.35s ease;
+
+$font_size: 16px;
+
+$media_xxl: 1680px;
+$media_xl: 1366px;
+$media_lg: 1199px;
+$media_md: 991px;
+$media_sm: 767px;
+$media_xs: 575px;
