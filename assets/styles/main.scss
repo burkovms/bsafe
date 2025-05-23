@@ -11,31 +11,55 @@
     background: transparent;
     color: map-get($colors, "accent");
   }
-  @media (min-width: 1024px) {
-    scrollbar-color: map-get($colors, "accent") map-get($colors, "accent");
+  // @media (min-width: 1024px) {
+  //   scrollbar-color: map-get($colors, "accent") map-get($colors, "accent");
+  //   scrollbar-width: thin;
+  //   &::-webkit-scrollbar {
+  //     width: 6px;
+  //     background-color: map-get($bg, "dark");
+  //     border-radius: 4px;
+  //   }
+  //   &::-webkit-scrollbar-thumb {
+  //     background-color: map-get($colors, "accent");
+  //     border-radius: 4px;
+  //     box-shadow: none;
+  //     opacity: 1;
+  //     &:hover {
+  //       background-color: map-get($colors, "purple");
+  //       opacity: 1;
+  //     }
+  //     &:active {
+  //       opacity: 1;
+  //       background-color: map-get($colors, "purple");
+  //     }
+  //     &:focus {
+  //       opacity: 1;
+  //       background-color: map-get($colors, "purple");
+  //     }
+  //   }
+  // }
+}
+
+@media (min-width: 1024px) {
+  * {
+    scrollbar-color: map-get($colors, "accent") transparent;
     scrollbar-width: thin;
     &::-webkit-scrollbar {
-      width: 6px;
-      background-color: map-get($bg, "dark");
+      width: 4px;
+      background-color: transparent;
       border-radius: 4px;
     }
     &::-webkit-scrollbar-thumb {
       background-color: map-get($colors, "accent");
-      border-radius: 4px;
-      box-shadow: none;
-      opacity: 1;
+      border-radius: 0;
       &:hover {
-        background-color: map-get($colors, "purple");
-        opacity: 1;
+        background-color: #272727;
       }
-      &:active {
-        opacity: 1;
-        background-color: map-get($colors, "purple");
-      }
-      &:focus {
-        opacity: 1;
-        background-color: map-get($colors, "purple");
-      }
+    }
+  }
+  body {
+    &::-webkit-scrollbar {
+      width: 8px;
     }
   }
 }

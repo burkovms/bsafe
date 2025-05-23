@@ -1,7 +1,7 @@
 <template>
   <div class="services pt140">
     <section
-      class="services__cover pb140"
+      class="services__cover pt140 pb140"
       :style="{
         backgroundImage: `url(${require('@/assets/img/bg-services.svg')})`,
       }"
